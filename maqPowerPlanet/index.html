@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>PowerPlanet</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <figure>
+            <img src="imagenes/logo.png" alt="logo">
+        </figure>
+        <form>
+            <input type="search" placeholder="Buscar...">
+        </form>  
+        <nav>
+            <a href="#">Ofertas Limitadas</a>
+            <a href="#">Contactanos</a>
+            <a href="#">ES</a>
+        </nav>
+        <div id="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+
+    <main>
+        <h2>Listado de productos que vienen de la API (Base de datos)</h2>
+        <section>
+            <article>
+                <p class="badge">Envios Gratis</p>
+                <figure>
+                <img src="imagenes/Productos/Google Pixel.png" alt="Producto 1">
+                </figure>
+                <p class="nombre">Google Pixel 10 PRO</p>
+                <p class="caracteristicas">12GB 256GB 5G Dual SIM 6.3" </p>
+                <p class="valoraciones">
+                    <span class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="valoracion">
+                        44
+                    </span>
+                    <span class="opinion">
+                        (7 opiniones)
+                    </span>
+                </p>
+                <div>
+                    <span class="dto">-15%</span>
+                    <span class="precio">
+                        <span class="pvr">599</span>
+                        <span class="pvp">499</span>
+                    </span>
+                </div>
+                <p class="stock">Stock</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <nav id="sociales">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </nav>
+        <div id="suscribete">
+            <h1>Suscribete a POWEROFERTAS</h1>
+            <input type="email" placeholder="Introduce tu email">
+        </div>
+        <article>
+             <h3>Condiciones de Compra</h3>
+             <nav>
+                <a href="#">
+                    <i class="fa-solid fa-car"></i>
+                    <span>¿Qué envios hay disponibles en Powerplanetonline?</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>¿Como puedo pagar a plazos en PowerPlanet?</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Condiciones generales</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-file"></i>
+                    <span>Devoluciones, Garantias y Reparaciones</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Politica de Privacidad</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-cookie"></i>
+                   <span> Politica de cookies</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>¡Compra desde la APP! Más ventajas</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Empleos</span>
+                </a>
+             </nav>
+        </article>
+        <article>
+             <h3>Distribidores</h3>
+             <nav>
+                <a href="#">¿Qué envios hay disponibles en Powerplanetonline?</a>
+                <a href="#">Condiciones generales</a>
+             </nav>
+        </article>
+        <article>
+             <h3>Información general</h3>
+             <nav>
+                <a href="#">¿Qué envios hay disponibles en Powerplanetonline?</a>
+                <a href="#">Condiciones generales</a>
+             </nav>
+        </article>
+    </footer>
+</body>
+</html>
+<script>
+    //fetch es una funcion javascript para leer un archivo json o hacer una peticion http a una API
+    fetch('data/productos.json')
+        .then(response => response.json())
+        .then(productos => {
+            const contenedor = document.getElementById('catalogo');
+            productos.forEach (productos => {
+                
+            })
+            coches.forEach (coche =>{
+
+            } )
+            const card = document.createElement('artice');
+            contenedor.innerHTML = `Ctalogo de Productos`;
+            card.innerHTML =
+            `
+            <p class="badge">Envio gratis</p>
+            <figure>
+                <img src="imagenes/Productos/Google Pixel.png" alt="Producto 1">
+            </figure>
+            <p class="nombre">${productos.nombre}</p>
+            <p clas="features">
+                <span>${producto.caracteristicas.cpu}
+                <span>${producto.caracteristicas.ram}
+                <span>${producto.caracteristicas.discos}
+            `;
+            contenedor.appendChild(card)
+        })
+</script>
