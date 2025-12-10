@@ -1,10 +1,15 @@
 [
+<<<<<<< HEAD
   { 
+=======
+  {
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
     "id": 1,
     "nombre": "Cubot C45 AZUL - Reloj inteligente",
     "precio": 34.99,
     "precioOriginal": 499.99,
     "descuento": 50,
+<<<<<<< HEAD
     "imagen": "https://www.powerplanetonline.com/cdnassets/Cubot-A30-gris-001_l.jpg",
     "valoracion": 3,
     "opiniones": 0,
@@ -19,6 +24,16 @@
       "https://www.powerplanetonline.com/cdnassets/Cubot-A30-gris-003_ad_l.jpg",
       "https://www.powerplanetonline.com/cdnassets/Cubot-A30-rosa-004_ad_l.jpg"
     ]
+=======
+    "imagen": "https://images.unsplash.com/photo-1606813902915-d23e25f5d2c1?w=500&auto=format&fit=crop",
+    "valoracion": 5.4,
+    "opiniones": 0,
+    "caracteristicas": {
+      "cpu": "Chipset Realtek RTL8762C",
+      "ram": "256 MB",
+      "disco": "512 MB"
+    }
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
   },
   {
     "id": 2,
@@ -26,13 +41,19 @@
     "precio": 799.00,
     "precioOriginal": 959.00,
     "descuento": 17,
+<<<<<<< HEAD
     "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1085/10855024/117-apple-iphone-16-128gb-azul-ultramar-caracteristicas.jpg",
     "valoracion": 2,
+=======
+    "imagen": "https://images.unsplash.com/photo-1603898037225-1be31a016f8e?w=500&auto=format&fit=crop",
+    "valoracion": 5,
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
     "opiniones": 34,
     "caracteristicas": {
       "cpu": "Apple A18 Bionic",
       "ram": "8 GB",
       "disco": "128 GB"
+<<<<<<< HEAD
     },
     "galeria": [
       "https://www.powerplanetonline.com/cdnassets/apple_iphone_16_azul_01_l.jpg",
@@ -41,6 +62,9 @@
       "https://www.powerplanetonline.com/cdnassets/apple_iphone_16_azul_04_ad_l.jpg",
       "https://www.powerplanetonline.com/cdnassets/apple_iphone_16_azul_05_ad_l.jpg"
     ]
+=======
+    }
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
   },
   {
     "id": 3,
@@ -48,13 +72,18 @@
     "precio": 999.00,
     "precioOriginal": 1180.00,
     "descuento": 15,
+<<<<<<< HEAD
     "imagen": "https://www.powerplanetonline.com/cdnassets/samsung_galaxy_s24_ultra_5g_negro_01_l.jpg",
+=======
+    "imagen": "https://images.unsplash.com/photo-1610901357838-2e7b504fddf4?w=500&auto=format&fit=crop",
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
     "valoracion": 4.9,
     "opiniones": 87,
     "caracteristicas": {
       "cpu": "Snapdragon 8 Gen 3",
       "ram": "12 GB",
       "disco": "256 GB"
+<<<<<<< HEAD
     },
     "galeria":[
       "https://www.powerplanetonline.com/cdnassets/samsung_galaxy_s24_ultra_5g_negro_01_l.jpg",
@@ -63,6 +92,9 @@
       "https://www.powerplanetonline.com/cdnassets/samsung_galaxy_s24_ultra_5g_negro_04_ad_l.jpg",
       "https://www.powerplanetonline.com/cdnassets/samsung_galaxy_s24_ultra_5g_negro_05_ad_l.jpg"
     ]
+=======
+    }
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
   },
   {
     "id": 4,
@@ -169,4 +201,8 @@
       "disco": "No aplica"
     }
   }
+<<<<<<< HEAD
 ]
+=======
+]
+>>>>>>> ee7056e56d59f6754eca66697d39f452f076accd
