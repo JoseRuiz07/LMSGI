@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPlanet</title>
+    <link rel="stylesheet" href="css/detalles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <figure>
+            <img src="imagenes/logo.png" alt="Logo PowerPlanet">    
+        </figure>
+        <form>
+            <input type="search" placeholder="Buscar...">
+        </form>
+        <nav>
+            <a href="#">Ofertas Limitadas</a>
+            <a href="#">Contactanos</a>
+            <a href="#">ES</a>
+        </nav>
+        <div id="carrito"> 
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <a href="http://127.0.0.1:5500/Lenguaje%20de%20Marcas/!Lo%20mio/maqPowerPlanet/index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a>
+                <span>></span>
+             </a>
+            <a href="#">
+             <span>Productos</span>
+             </a>
+              <a>
+                <span>></span>
+            </a>
+            <a href="#">
+                Moviles
+             </a>
+            <a>
+                >
+             </a>
+            <a href="#">
+                Este equipo
+            </a>
+    </nav>
+        <figure class="secundario">
+            <img src="imagenes/Detalles/imagen secundaria 1.jpg" alt="imagen secundaria">
+            <img src="imagenes/Detalles/imagen secundaria 2.jpg" alt="imagen secundaria">
+            <img src="imagenes/Detalles/imagen secundaria 3.jpg" alt="imagen secundaria">
+            <img src="imagenes/Detalles/imagen secundaria 4.jpg" alt="imagen secundaria">
+        </figure>
+        <figure class="principal">
+            <img id="product_foto" src="imagenes/Detalles/imagen principal.jpg" alt="imagen principal">
+        </figure>
+        <section class="informacion">
+            <p id="product_nombre" class="nombre">Producto va aqui</p>
+            <p class="valoraciones">
+                <span class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span id="product_nvaloraciones" class="estrellas">nº star</span>
+                <span id="product_comentarios" class="opiniones">(nº opiniones)</span>
+            </p>
+            <p class="precio">
+                <span id="product_descuento" class="descuento">-40%</span>
+                <span id="product_precio" class="precio_real">600€</span>
+            </p>
+            <p id="product_pcp" class="descartado">Precio recomendado: 800€</p>
+            <!-- <p id="product_pvp" class="iva">Precio Original: </p> -->
+            <section class="envios">
+                <div class="camion">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+                <div class="content">
+                    <p>Garantia</p>
+                    <p>Disponibilidad</p>
+                    <p>Envio</p>
+                    <p>Devolucion</p>
+                </div>
+            </section>
+        </section>
+    </main>
+ </body>   
+</html>
+<script>
+    // 1. Obtener los parametro de la URL
+    const urlParmans = new URLSearchParams(window.location.search);
+    // 2. Obtener el parametro del id
+    const idProduct = parseInt(urlParmans.get('codigo'))
+    // comprobar que el id llega al detalle.html a traves de la URL
+    console.log ("--->", idProduct)
+
+    fetch('./data/productos.json')
+        .then(response => response.json())
+        .then(productos => {
+            // buscar productos en array productos
+            const product = productos.find(p => p.id === idProduct)
+            
+            document.getElementById('product_nombre').textContent = product.nombre;
+            document.getElementById('product_nvaloraciones').textContent = product.valoracion;
+            document.getElementById('product_comentarios').textContent = `( ${product.opiniones} opiniones)`;
+            document.getElementById('product_descuento').textContent = `-${product.descuento} %`;
+            document.getElementById('product_precio').textContent = `${product.precio}`;
+            document.getElementById('product.pcp').textContent = `Precio recomendado = ${product.precioOriginal} €`
+            document.getElementById('product_foto').setAttribute("src", product.imagen);
+
+        })
+</script>
