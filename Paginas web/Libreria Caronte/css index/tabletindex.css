@@ -1,0 +1,55 @@
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20%;
+}
+
+header nav.loginsec{
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    order: 1;
+}
+
+header h1{
+    flex-basis: 50%;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    order: 2;
+}
+
+header nav.navsec{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    flex-basis: 50%;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    order: 3;
+}
+
+header nav.navsec a{
+    border: none;
+}
+
+main{
+    align-items: center;
+    justify-items: center;
+}
+
+main section{
+    border: 1px solid black;
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main section article{
+    flex-basis: 25%;
+    height: 400px;
+    margin: 20px;
+}

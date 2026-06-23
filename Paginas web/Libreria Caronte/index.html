@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria Caronte</title>
+    <link rel="stylesheet" href="css index/mobileindex.css">
+    <link rel="stylesheet" href="css index/tabletindex.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="css index/desktopindex.css" media="screen and (min-width: 1024px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="loginppal">
+            <a href="#" class="aten">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span>
+                    Atención al cliente
+                </span>
+            </a>
+            <a href="#" class="usu">
+                <i class="fa-solid fa-user"></i>
+                <span>
+                    Mi cuenta
+                </span>
+            </a>
+            <a href="#" class="cest">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span>
+                    Mi cesta
+                </span>
+            </a>
+        </nav>
+        <nav class="loginsec">
+            <a href="#">
+                Atencion al Cliente
+            </a>
+            <a href="#">
+                Usuario
+            </a>
+            <a href="#">
+                Cesta
+            </a>
+        </nav>
+        <figure>
+            <img src="img/logo.jpeg">
+        </figure>
+        <h1>
+            Libreria Caronte Sistemas
+        </h1>
+        <nav class="navppal">
+            <a href="#">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>
+                    Base de Datos
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-code"></i>
+                <span>
+                    Programación
+                </span>
+            </a>
+            <a href="#">
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                    Ciberseguridad
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-cloud"></i>
+                <span>
+                    DevOps
+                </span>
+            </a>
+        </nav>
+        <nav class="navsec">
+            <a href="#">
+                Base de Datos
+            </a>
+            <a href="#">
+                Programación
+            </a>
+            <a href="#">
+                Ciberseguridad
+            </a>
+            <a href="#">
+                DevOps
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section id="catalogo">
+            <!-- <article>
+                <p class="tarjetita">Categoria</p>
+                <figure>
+                    <img src="img/logo.jpeg" alt="portada">
+                </figure>
+                <p class="titulo">Titulo: Titulo</p>
+                <p class="autor">Autor: Autor</p>
+                <div>
+                    <span>Precio:xxx</span>
+                    <button>Comprar</button>
+                </div>
+            </article> -->
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+
+    fetch('json/JLRGlibros.json')
+      .then(response => response.json())
+      .then(libros => {
+        const contenedor = document.getElementById('catalogo');
+        libros.forEach (libro => {
+          const card = document.createElement('article');
+          card.innerHTML = `
+            <p class="tarjetita">${libro.categoria}</p>
+                <figure>
+                    <img src=${libro.imagen} alt=${libro.imagenCategoria}>
+                </figure>
+                <p class="titulo">Titulo: ${libro.nombre}</p>
+                <p class="autor"> Autor: ${libro.autor}</p>
+                <div>
+                    <span>${libro.precio}€</span>
+                    <button>Comprar</button>
+                </div>
+          `;
+          contenedor.appendChild(card);
+        });
+      })
+  </script>

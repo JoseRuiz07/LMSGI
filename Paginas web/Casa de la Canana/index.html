@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de la Canana | Mojacar</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="imagenes/Logo.png">
+        </figure>
+        <h1>Casa de la Canana</h1>
+        <nav>
+            <a href="#">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>
+                    Descripción
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>
+                    Ubicación
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-clock"></i>
+                <span>
+                    Horarios
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-pen"></i>
+                <span>
+                    Reserva
+                </span>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section class="desc">
+            <figure>
+                <img src="https://www.viajandoporelmundomundial.com/wp-content/uploads/2021/04/mojacar1.jpg.webp" alt="Imagen">          
+            </figure>
+            <div>
+                <p class="titulo">Descripción</p>
+                <p class="parraf">La Casa de la Canana es un museo etnográfico ubicado en Mojácar que recrea fielmente una vivienda rural de principios del siglo XX, con espacios diferenciados como la cuadra y el gallinero, y muebles y utensilios auténticos de la época. Destaca por la amabilidad y atención de la encargada, quien ofrece explicaciones detalladas y hace que la visita sea cercana e instructiva. Tiene una excelente valoración de 4,7 sobre 5 según 189 opiniones, con puntos fuertes en su conservación, autenticidad y experiencia educativa, aunque algunos visitantes mencionan que es un poco difícil de encontrar. Se recomienda especialmente para quienes deseen conocer la vida tradicional de la zona</p>
+            </div>
+        </section>
+        <section class="ubi">
+            <div>
+                <p class="titulo">Ubicación</p>
+                <p class="parraf">La Casa de la Cañana se encuentra en el casco histórico de Mojácar, en la provincia de Almería. Situada en una de las zonas más representativas del pueblo, está rodeada de calles estrechas y encaladas que reflejan la arquitectura tradicional andaluza. Su ubicación permite disfrutar de unas vistas privilegiadas del entorno y facilita el acceso a otros puntos de interés cultural e histórico de Mojácar, convirtiéndola en una parada imprescindible para quienes visitan la localidad.</p>
+            </div>
+            <figure>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d562.2485491014803!2d-1.851901498623233!3d37.13942713277193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7ad7b8bcd46867%3A0xafafe6023f2a42f9!2zTXVzZW8g4oCcQ2FzYSBkZSBsYSBDYW5hbmHigJ0!5e0!3m2!1ses-419!2ses!4v1766499389535!5m2!1ses-419!2ses" 
+                 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </figure>
+        </section>
+        <!-- <section class="hor">
+            <figure>
+                <img src="" alt="Imagen">
+            </figure>
+            <div>
+                <p class="titulo">Horario</p>
+                <p class="parraf">Lunes 10:30h a 14:30h</p>
+                <p class="parraf">Martes 10:30h a 14:30h y 16:30h a 19:00h</p>
+                <p class="parraf">Miércoles 10:30h a 14:30h y 16:30h a 19:00h</p>
+                <p class="parraf">Jueves 10:30h a 14:30h</p>
+                <p class="parraf">Viernes 10:30h a 14:30h y 16:30-19:00h</p>
+                <p class="parraf">Sábado 10:30h a 14:30h y 16:30-19:00h</p>
+                <p class="parraf">Domingo 10:30h a 14:30h</p>
+        </section> -->
+        <section class="hor">
+            <i class="fa-solid fa-clock"></i>
+            <h1>
+                Horarios
+            </h1>
+            <table>
+                <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+                <tr>
+                    <td>10:30h-14:30h</td>
+                    <td>10:30h-14:30h</td>
+                    <td>10:30h-14:30h</td>
+                    <td>10:30h-14:30h</td>
+                    <td>10:30h-14:30h</td>
+                    <td>10:30h-14:30h</td>
+                    <td>10:30h-14:30h</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>16:30h-19:00h</td>
+                    <td>16:30h-19:00h</td>
+                    <td>-</td>
+                    <td>16:30-19:00h</td>
+                    <td>16:30-19:00h</td>
+                    <td>-</td>
+                </tr>
+                </table>
+        </section>
+        <section class="res">
+            <article>
+                <h2>Reserva</h2>
+                <form>
+                    <label for="name">Nombre</label>
+                    <input id="name" type="text" name="Nombre" placeholder="Ex. Sofya">
+                    <label for="surname">Apellidos</label>
+                    <input id="surname" type="text" name="Apellido" placeholder="Ex. Kofanova">
+                    <br>
+                    <label for="people">Nº Personas</label>
+                    <input id="people" type="number" name="Numero" min="1" max="10">
+                    <br>
+                    <label for="fecha">Fecha</label>
+                    <input id="fecha" type="date" name="Día">
+                    <br>
+                    <label for="hora">Hora</label>
+                    <select id="hora" disabled>
+                      <option value="">Selecciona una fecha primero</option>
+                    </select>
+                    <br>
+                    <input type="submit" name="Enviar" placeholder="Enviar">
+                </form>
+            </article>
+        </section>
+    </main>
+<script src="js/index.js"></script>
+</body>
+</html>
