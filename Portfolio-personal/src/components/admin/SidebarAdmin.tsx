@@ -1,8 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard, Wrench, Briefcase, BookOpen,
-  Plus, Mail, ShoppingBag, ArrowLeft, Settings, 
-  HelpCircle, LogOut, MoreHorizontal
+  Plus, Mail, ShoppingBag, ArrowLeft,  LogOut, 
 } from "lucide-react";
 import { supabase } from "@/model/utils/Supabase"; // Asegúrate de que esta sea tu ruta
 
