@@ -33,7 +33,7 @@ export const SidebarAdmin = () => {
 
       {/* Quick Create */}
       <button className="asb__quick" onClick={() => nav("/admin")}>
-        <Plus size={13}/><span>Creación rápida</span>
+        <Plus size={13}/><span>Panel general</span>
         <Mail size={13} className="asb__mail"/>
       </button>
 
