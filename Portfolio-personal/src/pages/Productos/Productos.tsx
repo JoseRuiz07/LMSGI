@@ -34,7 +34,7 @@ export const Productos = () => {
   }
 
   return (
-    <section id="productos" className="min-h-screen flex flex-col items-center justify-center">
+    <section id="productos" className="min-h-screen flex flex-col items-center pt-5">
       <h1 className="text-center text-gray-900 py-10 text-3xl font-bold">
         Productos Disponibles
       </h1>

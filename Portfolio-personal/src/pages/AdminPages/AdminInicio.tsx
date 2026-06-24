@@ -85,10 +85,6 @@ export const AdminInicio = () => {
           </AreaChart>
         </ResponsiveContainer>
       </div>
-
-      <div className="ahome-hint">
-        <p>Selecciona una sección del menú lateral para añadir o eliminar contenido. Los cambios se guardan automáticamente en Supabase.</p>
-      </div>
     </div>
   );
 }

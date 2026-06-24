@@ -1,3 +1,7 @@
+import miImagen from "@/assets/miImagen.png"; 
+
+// 2. La usas dentro del JSX
+<img src={miImagen} alt="Descripción" className="w-full rounded-lg" />
 export const Sobremi = () => {
     return (
     // 1. Contenedor principal que usa Flexbox para poner las dos columnas
@@ -30,8 +34,8 @@ export const Sobremi = () => {
         <div className="aspect-square w-full max-w-sm overflow-hidden border-2 border-border rounded-2xl bg-muted shadow-lg hover:shadow-xl transition-shadow duration-300">
           <img 
             // Pon aquí la ruta real de tu imagen:
-            src="" // Imagen de ejemplo
-            alt="Foto de perfil de Jose"
+            src={miImagen}
+            alt="Logo de Jose"
             className="w-full h-full object-cover rounded-2xl"
           />
         </div>

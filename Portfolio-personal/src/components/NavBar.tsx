@@ -9,7 +9,8 @@ export const NavBar = () => {
             <Link to="/servicios" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Servicios</Link>
             <Link to="/trabajos" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Trabajos</Link>
             <Link to="/productos" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Productos</Link>
-            <Link to="/sociales" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contactos</Link>
+            <Link to="/sociales" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Redes Sociales</Link>
+            <Link to="/contacto-directo" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contacto directo</Link>
         </nav>
     )
 }

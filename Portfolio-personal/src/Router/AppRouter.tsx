@@ -11,9 +11,9 @@ import { TrabajoDetalle } from "@/pages/Trabajos/TrabajoDetalle"
 import { Productos } from "@/pages/Productos/Productos"
 import { ProductoDetalle } from "@/pages/Productos/ProductoDetalle"
 import { Sociales } from "@/scroll/Sociales"
+import { ContactoDirecto } from "@/pages/ContactoDirecto"
 
-// Admin
-
+// Admin e Imports de Seguridad
 import { StoreProvider } from "@/components/Context/Contexto"
 import { BackLayout } from "@/layouts/BackLayout"
 import { AdminInicio } from "@/pages/AdminPages/AdminInicio"
@@ -22,12 +22,15 @@ import { AdminProductos } from "@/pages/AdminPages/AdminProductos"
 import { AdminServicios } from "@/pages/AdminPages/AdminServicios"
 import { AdminSociales } from "@/pages/AdminPages/AdminSociales"
 import { AdminTrabajos } from "@/pages/AdminPages/AdminTrabajos"
+import { Login } from "@/pages/AdminPages/Login"
+import { ProtectedRoute } from "@/components/Seguro" 
 
 export const AppRouter = () => {
     return (
         <BrowserRouter>
           <StoreProvider>
             <Routes>
+                {/* Rutas Públicas */}
                 <Route element={<MainLayout />}>
                     <Route path="/" element={<Inicio />} />
                     <Route path="/sobremi" element={<Sobremi />} />
@@ -40,9 +43,16 @@ export const AppRouter = () => {
                     <Route path="/productos" element={<Productos />} />
                     <Route path="/productos/:id" element={<ProductoDetalle />} />
                     <Route path="/sociales" element={<Sociales />} />
+                    <Route path="/contacto-directo" element={<ContactoDirecto />} />
                 </Route>
 
-                <Route path="/admin" element={<BackLayout />}>
+                {/* Rutas de Admin */}
+                <Route path="/admin/login" element={<Login />} />
+                <Route path="/admin" element={
+                    <ProtectedRoute>
+                        <BackLayout />
+                    </ProtectedRoute>
+                }>
                     <Route index element={<AdminInicio />} />
                     <Route path="servicios" element={<AdminServicios />} />
                     <Route path="trabajos" element={<AdminTrabajos />} />

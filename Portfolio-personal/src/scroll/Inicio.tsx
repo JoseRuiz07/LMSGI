@@ -8,7 +8,8 @@ export const Inicio = () => {
     { titulo: "Servicios", desc: "Servicios de administración de sistemas, redes y soporte técnico.", to: "/servicios", btn: "Ver Servicios" },
     { titulo: "Trabajos", desc: "Consulta algunos de los trabajos y proyectos que he realizado.", to: "/trabajos", btn: "Ver Trabajos" },
     { titulo: "Productos", desc: "Equipos informáticos seleccionados para cubrir necesidades tecnológicas.", to: "/productos", btn: "Ver Productos" },
-    { titulo: "Contacto", desc: "Accede a mis redes sociales y canales de comunicación.", to: "/sociales", btn: "Ir a Contacto" },
+    { titulo: "Sociales", desc: "Accede a mis redes sociales y canales de comunicación.", to: "/sociales", btn: "Ir a Sociales" },
+    { titulo: "Contacto Directo", desc: "Enviame un mensaje por correo.", to: "/contacto-directo", btn: "Contactar" },
   ];
 
   return (
