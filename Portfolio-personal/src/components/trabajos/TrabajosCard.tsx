@@ -10,7 +10,7 @@ interface Props {
 export const TrabajosCard = ({ trabajos }: Props) => {
   // Responsabilidad: mostrar en un listado de Cards la información de los trabajos que se le pasan por props
   return (
-    <div className="grid gap-8 p-10 md:grid-cols-2 bg-gray-50/50">
+    <div className="grid gap-8 p-10 md:grid-cols-2 bg-[#0b0f16]">
       {
         trabajos.map((trabajo) => (
           // ─── SOLUCIÓN: El key se coloca aquí, en la etiqueta más externa del .map() ───

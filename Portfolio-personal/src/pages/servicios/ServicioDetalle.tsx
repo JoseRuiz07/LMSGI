@@ -21,7 +21,7 @@ export const ServicioDetalle = () => {
         setServicio(datosServicio);
       } catch (error) {
         console.error("Error cargando el detalle en el controlador:", error);
-      } {
+      } finally {
         setLoading(false);
       }
     };
@@ -38,7 +38,7 @@ export const ServicioDetalle = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-background">
+    <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-[#0b0f16]">
       {servicio ? (
         <ServicioCard servicio={servicio} isDetail={true} />
       ) : (

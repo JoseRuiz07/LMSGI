@@ -38,7 +38,7 @@ export const TrabajoDetalle = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-background">
+    <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-[#0b0f16]">
       {trabajo ? (
         <TrabajoCard trabajo={trabajo} isDetail={true} />
       ) : (

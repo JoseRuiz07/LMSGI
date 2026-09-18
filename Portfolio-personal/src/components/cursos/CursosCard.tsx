@@ -10,7 +10,7 @@ interface Props {
 export const CursosCard = ({cursos}: Props) => {
   //responsalidad: mostrar en una listado de Cards la información de los servicios que se le pasan por props
   return (
-    <div  className="grid gap-8 p-10 md:grid-cols-2 bg-gray-50/50">
+    <div  className="grid gap-8 p-10 md:grid-cols-2 bg-[#0b0f16]">
       {
         cursos.map( (curso) => (
                 <NavLink key={curso.id} to={`/cursos/${curso.id}`} 

@@ -7,7 +7,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-slate-900 text-slate-300 border-t border-slate-800">
+    <footer className="w-full bg-[#0b0f16] text-slate-300 border-t border-slate-800">
       
       {/* ─── CONTENIDO PRINCIPAL (GRID) ─── */}
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">

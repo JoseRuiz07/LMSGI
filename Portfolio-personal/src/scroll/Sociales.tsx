@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { getSociales } from '@/model/api/main/apiSocial';
 import type { ISociales } from '@/model/interface/ISociales';
+import { ExternalLink, Link2, Terminal } from 'lucide-react'; // Iconos para la estética SysAdmin
 
 export const Sociales = () => {
   const [redesSociales, setRedesSociales] = useState<ISociales[]>([]);
-  const [redActivaId, setRedActivaId] = useState<number | null>(null); // <-- Estado para saber cuál pintar de azul
+  const [redActivaId, setRedActivaId] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -30,24 +31,24 @@ export const Sociales = () => {
   useEffect(() => {
     if (redesSociales.length === 0) return;
 
-    // Configuramos el sensor para que detecte qué tarjeta está en la mitad de la pantalla
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Extraemos el ID numérico que le pusimos al atributo data-id
+
             const id = Number(entry.target.getAttribute('data-id'));
             setRedActivaId(id);
           }
         });
       },
       {
-        rootMargin: '-30% 0px -40% 0px', // Enfoca la detección en la zona central de la pantalla
+        rootMargin: '-30% 0px -40% 0px',
         threshold: 0.1,
       }
     );
 
-    // Enganchamos el sensor a todas nuestras tarjetas de redes sociales
+
     redesSociales.forEach((red) => {
       const elemento = document.getElementById(`social-card-${red.id}`);
       if (elemento) observer.observe(elemento);
@@ -56,11 +57,11 @@ export const Sociales = () => {
     return () => observer.disconnect();
   }, [redesSociales]);
 
-  // Función manual al hacer clic en las pestañas
+  
   const scrollToSocial = (id: number) => {
     const elemento = document.getElementById(`social-card-${id}`);
     if (elemento) {
-      setRedActivaId(id); // Forzamos el azul de inmediato al hacer clic
+      setRedActivaId(id);
       elemento.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
@@ -70,30 +71,31 @@ export const Sociales = () => {
 
   if (loading) {
     return (
-      <div className="w-full text-center py-20 text-gray-500 animate-pulse font-medium">
-        Cargando ecosistema social...
+      <div className="w-full min-h-screen bg-[#0b0f17] flex items-center justify-center text-cyan-500/50 animate-pulse font-mono text-sm">
+        <Terminal size={16} className="mr-2 inline" /> Inicializando ecosistema social...
       </div>
     );
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 pb-32">
+    <div className="w-full min-h-screen bg-[#0b0f17] pb-32 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
       
-      {/* ─── SEGUNDA NAVBAR CON ESTADO ACTIVO AZUL DINÁMICO ─── */}
-      <div className="sticky top-0 z-40 w-full bg-slate-800 text-white shadow-md border-t border-slate-700">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center">
+      {/* ─── NAVBAR ESTILO DARK/SYSADMIN CON SCROLL HORIZONTAL ─── */}
+      <div className="sticky top-0 z-40 w-full bg-[#0b0f17]/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div className="max-w-4xl mx-auto px-4 h-16 flex items-center">
           
-          <nav className="flex space-x-2 overflow-x-auto scrollbar-none py-1 w-full">
+          <nav className="flex space-x-2 overflow-x-auto scrollbar-none py-2 w-full snap-x">
             {redesSociales.map((red) => (
               <button
                 key={red.id}
                 onClick={() => scrollToSocial(red.id)}
-                className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${
+                className={`snap-start px-5 py-2 rounded-xl text-xs font-mono font-bold transition-all whitespace-nowrap flex items-center gap-2 ${
                   redActivaId === red.id
-                    ? 'bg-blue-600 text-white shadow scale-105' // <-- Si es la activa por scroll o click, se pone azul
-                    : 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                    ? 'bg-cyan-400 text-[#0b0f17] shadow-[0_0_15px_rgba(34,211,238,0.3)] scale-[1.02]' 
+                    : 'text-slate-400 bg-transparent hover:bg-slate-800/50 hover:text-slate-200'
                 }`}
               >
+                <Terminal size={14} className={redActivaId === red.id ? 'text-[#0b0f17]' : 'text-slate-500'} />
                 {red.nombre}
               </button>
             ))}
@@ -102,54 +104,81 @@ export const Sociales = () => {
         </div>
       </div>
 
-      <div className="text-center mt-16 mb-12">
-        <h1 className="text-4xl font-black text-slate-900 tracking-tight">Mis Conexiones</h1>
+      {/* ─── ENCABEZADO ─── */}
+      <div className="max-w-4xl mx-auto px-4 mt-16 mb-12">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+        </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Mis Conexiones
+        </h1>
+        <p className="text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed">
+          Ecosistema de canales profesionales, repositorios de infraestructura, comunidades técnicas de administración de sistemas y redes telemáticas.
+        </p>
       </div>
 
-      {/* ─── SCROLL VERTICAL CON SEPARACIÓN AMPLIADA ─── */}
-      <main className="max-w-4xl mx-auto p-4 flex flex-col gap-48"> 
+      {/* ─── TARJETAS DE CONEXIONES ─── */}
+      <main className="max-w-4xl mx-auto px-4 flex flex-col gap-12"> 
         {redesSociales.map((red) => (
           <section
             key={red.id}
             id={`social-card-${red.id}`}
-            data-id={red.id} // <-- Atributo clave para que el sensor de scroll sepa qué ID es
-            className="bg-white rounded-2xl border border-gray-200 p-8 shadow-xl flex flex-col md:flex-row items-center gap-8 scroll-mt-24 transition-all duration-300"
+            data-id={red.id}
+            className="bg-[#131926] rounded-2xl border border-slate-800/80 p-6 shadow-2xl flex flex-col md:flex-row gap-6 scroll-mt-32 transition-colors duration-300 hover:border-slate-700/80 group"
           >
             
-            {/* Contenedor de la Imagen (IMG) */}
-            <div className="w-full md:w-1/3 aspect-video md:aspect-square bg-slate-100 rounded-xl overflow-hidden shadow-inner border border-gray-100 flex items-center justify-center">
+            {/* Contenedor de la Imagen (Efecto Glow) */}
+            <div className="w-full md:w-36 h-48 md:h-36 shrink-0 bg-[#0b0f17] rounded-xl overflow-hidden border border-slate-800 flex items-center justify-center p-2 relative">
+              <div className="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
-                src={red.imagen || "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=500"} 
+                src={red.imagen || "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=500"} 
                 alt={red.nombre}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-lg opacity-90 group-hover:opacity-100 transition-opacity"
               />
             </div>
 
-            {/* Contenedor de Textos (Nombre y URL) */}
-            <div className="w-full md:w-2/3 flex flex-col justify-center">
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">
-                Red Social
-              </span>
-              <h2 className="text-4xl font-black text-slate-900 mb-3">
+            {/* Contenedor de Textos y Enlaces */}
+            <div className="flex-1 flex flex-col justify-center min-w-0">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 {red.nombre}
               </h2>
               
-              {/* Enlace Directo (URL) */}
-              <a 
-                href={red.url}
-                target="_blank"
-                rel="noopener noreferrer" 
-                className="inline-flex items-center justify-center md:justify-start font-mono text-sm text-blue-500 bg-blue-50/50 hover:bg-blue-50 border border-blue-100 rounded-lg p-3 transition-colors break-all group"
-              >
-                <span className="group-hover:underline">{red.url}</span>
-              </a>
+              {/* Texto descriptivo (Utiliza la propiedad descripcion si existe, si no usa un fallback estilo ASIR) */}
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                {(red as any).descripcion || "Repositorios de configuración, laboratorios de infraestructuras en Cisco Packet Tracer, virtualización y despliegue de redes telemáticas en sistemas Linux/Windows."}
+              </p>
+              
+              {/* Footer de la tarjeta: URL y Botón */}
+              <div className="mt-auto pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                
+                {/* Indicador de URL */}
+                <div className="flex items-center gap-2 text-slate-500 font-mono text-xs overflow-hidden w-full sm:w-auto">
+                  <Link2 size={14} className="shrink-0" />
+                  <span className="truncate">{red.url}</span>
+                </div>
+
+                {/* Botón de Acción Cyan */}
+                <a 
+                  href={red.url}
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 font-mono text-xs font-bold text-[#0b0f17] bg-cyan-400 hover:bg-cyan-300 px-5 py-2.5 rounded-lg transition-all duration-200 shadow-[0_0_15px_rgba(34,211,238,0.15)] hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] active:scale-95"
+                >
+                  Acceder al Enlace
+                  <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
 
           </section>
         ))}
 
         {redesSociales.length === 0 && (
-          <p className="text-center text-gray-400 italic py-12">No hay redes sociales configuradas en Supabase.</p>
+          <div className="text-center bg-[#131926] border border-slate-800 rounded-2xl p-12">
+            <p className="text-slate-500 font-mono text-sm inline-flex items-center gap-2">
+              <Terminal size={16} /> No se encontraron conexiones configuradas en la base de datos.
+            </p>
+          </div>
         )}
       </main>
 

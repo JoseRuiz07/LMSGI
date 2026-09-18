@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"; 
 import { Link, useParams } from "react-router-dom";
-import { getProductoById } from "@/model/api/main/apiProductos"; // Tu nueva función para buscar un producto individual
+import { getProductoById } from "@/model/api/main/apiProductos";
 import type { IProductos } from "@/model/interface/IProductos";
 import { ProductoCard } from "@/components/productos/ProductoCard";
 import { Button } from "@/components/ui/button";
@@ -31,8 +31,8 @@ export const ProductoDetalle = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-background">
-        <p className="text-lg font-medium text-muted-foreground animate-pulse">
+      <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-[#0b0f16]">
+        <p className="text-lg font-medium text-slate-400 animate-pulse">
           Cargando detalles del producto...
         </p>
       </div>
@@ -40,15 +40,19 @@ export const ProductoDetalle = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-background">
+    <div className="flex justify-center items-center min-h-[calc(100vh-80px)] p-6 bg-[#0b0f16]">
       {producto ? (
-        // Le pasamos el producto y activamos el modo detalle heredado de Shadcn
         <ProductoCard producto={producto} isDetail={true} />
       ) : (
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">Producto no encontrado</h2>
           <Link to="/productos">
-            <Button>Regresar a Productos</Button>
+            <Button
+              variant="outline"
+              className="bg-[#1a202c] hover:bg-[#232a36] text-slate-300 border-[#2d3544] hover:text-cyan-400"
+            >
+              Regresar a Productos
+            </Button>
           </Link>
         </div>
       )}

@@ -10,7 +10,7 @@ interface Props {
 export const ServiciosCard = ({ servicios }: Props) => {
   // Responsabilidad: mostrar en un listado de Cards la información de los servicios que se le pasan por props
   return (
-    <div className="grid gap-8 p-10 md:grid-cols-2 bg-gray-50/50">
+    <div className="grid gap-8 p-10 md:grid-cols-2 bg-[#0b0f16]">
       {
         servicios.map((servicio) => (
           // ─── SOLUCIÓN: Eliminamos el <> y movemos la key al elemento más externo ───
