@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Download, FolderOpen, Mail, Handshake } from "lucide-react";
-import miImagen from "@/assets/FotoJose.jpeg";
+import miImagen from "@/assets/FotoJose.png";
 
 
 export const Sobremi = () => {
@@ -58,7 +58,7 @@ export const Sobremi = () => {
 
             {/* --- BOTONES PRINCIPALES --- */}
             <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
-              <a href="/cv-jose-luis-ruiz-gennell.pdf" download>
+              <a href="/CVJoséRuiz" download>
                 <Button className="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-[#0b0f16] font-mono text-sm font-semibold px-6 py-6 rounded-xl gap-2 shadow-[0_0_20px_rgba(34,211,238,0.25)] transition-all">
                   <Download size={18} />
                   Descargar CV Técnico (PDF)
